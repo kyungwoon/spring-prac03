@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class RestaurantDto {
+public class RestaurantRequestDto {
     private Long id;
     private String name;
     private int minOrderPrice;

@@ -1,22 +1,27 @@
 package com.example.springprac03.service;
 
-import com.example.springprac03.dto.RestaurantDto;
+import com.example.springprac03.dto.RestaurantRequestDto;
 import com.example.springprac03.model.Restaurant;
 import com.example.springprac03.repository.RestaurantRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Service
 public class RestaurantService {
 
     private final RestaurantRepository restaurantRepository;
 
+    @Autowired
+    public RestaurantService(RestaurantRepository restaurantRepository) {
+        this.restaurantRepository = restaurantRepository;
+    }
+
     //식당 등록
-    public Restaurant registerRestaurant(RestaurantDto requestDto) {
+    public Restaurant registerRestaurant(RestaurantRequestDto requestDto) {
         String name = requestDto.getName();
         int minOrderPrice = requestDto.getMinOrderPrice();
         int deliveryFee = requestDto.getDeliveryFee();

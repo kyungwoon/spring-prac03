@@ -1,6 +1,6 @@
 package com.example.springprac03.controller;
 
-import com.example.springprac03.dto.RestaurantDto;
+import com.example.springprac03.dto.RestaurantRequestDto;
 import com.example.springprac03.model.Restaurant;
 import com.example.springprac03.repository.RestaurantRepository;
 import com.example.springprac03.service.RestaurantService;
@@ -15,12 +15,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class RestaurantController {
-    private final RestaurantRepository restaurantRepository;
+//    private final RestaurantRepository restaurantRepository;
     private final RestaurantService restaurantService;
 
     @PostMapping("/restaurant/register")
-    public Restaurant registerRestaurant(@RequestBody RestaurantDto restaurantDto) {
-        return restaurantService.registerRestaurant(restaurantDto);
+    public Restaurant registerRestaurant(@RequestBody RestaurantRequestDto restaurantRequestDto) {
+        return restaurantService.registerRestaurant(restaurantRequestDto);
     }
 
     @GetMapping("/restaurants")

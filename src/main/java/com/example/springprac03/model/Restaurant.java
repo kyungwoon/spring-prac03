@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Restaurant {
+public class  Restaurant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
