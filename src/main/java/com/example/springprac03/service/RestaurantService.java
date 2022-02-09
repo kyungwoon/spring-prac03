@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
-//@RequiredArgsConstructor
 @Service
 public class RestaurantService {
 
@@ -21,8 +20,8 @@ public class RestaurantService {
     }
 
     //식당 등록
+    @Transactional
     public Restaurant registerRestaurant(RestaurantRequestDto requestDto) {
-        String name = requestDto.getName();
         int minOrderPrice = requestDto.getMinOrderPrice();
         int deliveryFee = requestDto.getDeliveryFee();
 
@@ -36,16 +35,12 @@ public class RestaurantService {
         }
 
 
-        Restaurant restaurant = Restaurant.builder()
-                .name(name)
-                .deliveryFee(deliveryFee)
-                .minOrderPrice(minOrderPrice)
-                .build();
+        Restaurant restaurant = new Restaurant(requestDto);
         return restaurantRepository.save(restaurant);
     }
-    //식당 조회
+
     @Transactional
-    public List<Restaurant> readRestaurant (){
+    public List<Restaurant> getAllRestaurant() {
         return restaurantRepository.findAll();
     }
 }
