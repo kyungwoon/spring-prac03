@@ -8,15 +8,7 @@ import lombok.Setter;
 @Setter
 public class FoodRequestDto {
     private Long id;
-    private Long restId;
     private String name;
     private int price;
-
-//    @Builder
-//    public FoodRequestDto(Long restId, String name, int price){
-//        this.restId = restId;
-//        this.name = name;
-//        this.price = price;
-//    }
 
 }
