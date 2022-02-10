@@ -12,11 +12,11 @@ public class FoodRequestDto {
     private String name;
     private int price;
 
-    @Builder
-    public FoodRequestDto(Long restId, String name, int price){
-        this.restId = restId;
-        this.name = name;
-        this.price = price;
-    }
+//    @Builder
+//    public FoodRequestDto(Long restId, String name, int price){
+//        this.restId = restId;
+//        this.name = name;
+//        this.price = price;
+//    }
 
 }
